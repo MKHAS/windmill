@@ -50,5 +50,8 @@
   "bugs": {
     "url": "https://github.com/MKHAS/windmill/issues"
   },
-  "homepage": "https://github.com/MKHAS/windmill#readme"
+  "homepage": "https://github.com/MKHAS/windmill#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
 }
