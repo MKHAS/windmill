@@ -1,13 +1,12 @@
 const express = require("express");
 const router = express.Router();
+const { getPosts } = require("../controllers/postController");
 
 /**
  *
  * GET - All Posts
  */
-router.get("/", (req, res) => {
-	res.status(200).json({ message: "All Posts" });
-});
+router.get("/", getPosts);
 
 /**
  *
