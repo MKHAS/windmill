@@ -9,15 +9,9 @@ const {
 
 /**
  *
- * GET - All Posts
+ * "/"
  */
-router.get("/", getPosts);
-
-/**
- *
- * POST - Add a post
- */
-router.post("/", addPost);
+router.route("/").get(getPosts).post(addPost);
 
 /**
  *

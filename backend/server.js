@@ -4,6 +4,13 @@ const port = process.env.PORT || 5000;
 
 const app = express();
 
+//Middleware
+
+//Enable us to use req body data
+app.use(express.json());
+//Enable us to use data encoded in the url
+app.use(express.urlencoded({ extended: false }));
+
 app.use("/api/posts", require("./routes/postRoutes"));
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
