@@ -1,3 +1,5 @@
+const asyncHandler = require("express-async-handler");
+
 /**
  *
  * @desc get Posts
@@ -5,9 +7,9 @@
  * @access Private
  */
 
-const getPosts = async (req, res) => {
+const getPosts = asyncHandler(async (req, res) => {
 	res.status(200).json({ message: "Get All Posts" });
-};
+});
 
 /**
  *
@@ -16,13 +18,13 @@ const getPosts = async (req, res) => {
  * @access Private
  */
 
-const addPost = async (req, res) => {
+const addPost = asyncHandler(async (req, res) => {
 	if (!req.body.text) {
 		res.status(400);
 		throw new Error("Please add a text field");
 	}
 	res.status(200).json({ message: "Add a post" });
-};
+});
 
 /**
  *
@@ -31,9 +33,9 @@ const addPost = async (req, res) => {
  * @access Private
  */
 
-const updatePost = async (req, res) => {
+const updatePost = asyncHandler(async (req, res) => {
 	res.status(200).json({ message: `Update Post with id : ${req.params.id}` });
-};
+});
 
 /**
  *
@@ -42,9 +44,9 @@ const updatePost = async (req, res) => {
  * @access Private
  */
 
-const deletePost = async (req, res) => {
+const deletePost = asyncHandler(async (req, res) => {
 	res.status(200).json({ message: `Delete Post with id : ${req.params.id}` });
-};
+});
 
 module.exports = {
 	getPosts,
