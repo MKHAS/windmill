@@ -5,7 +5,7 @@
  * @access Private
  */
 
-const getPosts = (req, res) => {
+const getPosts = async (req, res) => {
 	res.status(200).json({ message: "Get All Posts" });
 };
 
@@ -16,7 +16,7 @@ const getPosts = (req, res) => {
  * @access Private
  */
 
-const addPost = (req, res) => {
+const addPost = async (req, res) => {
 	if (!req.body.text) {
 		res.status(400);
 		throw new Error("Please add a text field");
@@ -31,7 +31,7 @@ const addPost = (req, res) => {
  * @access Private
  */
 
-const updatePost = (req, res) => {
+const updatePost = async (req, res) => {
 	res.status(200).json({ message: `Update Post with id : ${req.params.id}` });
 };
 
@@ -42,7 +42,7 @@ const updatePost = (req, res) => {
  * @access Private
  */
 
-const deletePost = (req, res) => {
+const deletePost = async (req, res) => {
 	res.status(200).json({ message: `Delete Post with id : ${req.params.id}` });
 };
 
