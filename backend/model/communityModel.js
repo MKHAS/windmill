@@ -21,4 +21,4 @@ const communitySchema = new Schema(
 );
 
 const Community = model("Community", communitySchema);
-export default Community;
+module.exports = Community;
