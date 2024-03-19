@@ -17,7 +17,22 @@ const postSchema = new Schema(
 		author: SchemaTypes.ObjectId,
 		posted_in: SchemaTypes.ObjectId,
 		likes: [SchemaTypes.ObjectId],
-		commentsThread: SchemaTypes.ObjectId,
+		//commentsThread: SchemaTypes.ObjectId,
+		comments: [
+			{
+				author: {
+					type: SchemaTypes.ObjectId,
+					ref: "User",
+				},
+				body: {
+					type: String,
+					required: true,
+					maxlength: 5000,
+				},
+				likes: Number,
+				date: Date,
+			},
+		],
 	},
 	{ timestamps: true }
 );
