@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-const Community = require("../model/communityModel");
+// const User = require("../model/userModel");
+//const Community = require("../model/communityModel");
 
 const connectDB = async () => {
 	try {
@@ -8,11 +9,11 @@ const connectDB = async () => {
 
 		//Db mini tests go here
 
-		// const community = await Community.create({
-		// 	name: "Test Community 0",
-		// 	description: "Test Community",
+		// const user = await User.create({
+		// 	username: "Test User 1",
+		// 	password: "password",
 		// });
-		// console.log(community);
+		// console.log(user);
 	} catch (error) {
 		console.log(error);
 		process.exit(1); //exit with failure
